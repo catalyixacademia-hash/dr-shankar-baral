@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #1a3c6e;
+  --color-primary-light: #2856a0;
+  --color-primary-dark: #0f2440;
+  --color-teal: #0a8a90;
+  --color-teal-light: #12b5bd;
+  --color-teal-dark: #065c60;
+  --color-gold: #c9a24a;
+  --color-gold-light: #e8c86b;
+  --color-gold-dark: #a07c2e;
+  --color-charcoal: #1a1a2e;
+  --color-charcoal-light: #3d3d5c;
+  --color-surface: #f6f8fc;
+  --color-surface-2: #eaeff8;
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
+
+.font-serif { font-family: var(--font-serif); }
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+/* Gold accent line below headings */
+.heading-accent {
+  position: relative;
+  padding-bottom: 1rem;
+}
+.heading-accent::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 52px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+  border-radius: 2px;
+}
+.heading-accent-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prose-medical p { line-height: 1.88; color: #4a5568; }
+
+/* Nepali Devanagari font class */
+.font-nepali {
+  font-family: var(--font-devanagari), "Noto Sans Devanagari", sans-serif;
+}
+[lang="ne"], .ne-text {
+  font-family: var(--font-devanagari), "Noto Sans Devanagari", sans-serif;
+  line-height: 1.9;
+}
